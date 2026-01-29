@@ -16,7 +16,7 @@ conda config --set channel_priority strict
 mamba create -n oligominer \
   python=3.11 \
   biopython numpy scipy scikit-learn \
-  bowtie2 \
+  bowtie2 kmer-jellyfish \
   -y
 
 conda activate oligominer
@@ -114,9 +114,13 @@ Create a dictionary (example from the original guide; adjust `-s`, `-m`, and fil
 jellyfish count -s 3300M -m 18 -o genome_18.jf --out-counter-len 1 -L 2 genome.fa
 ```
 
-(If you have a k-mer filtering script in this repo, run it here using your `.jf`.)
+If you have a k-mer filtering script in this repo, run it here using your `.jf`.
 
-### 5) Reverse-complement probes (probeRC)
+```bash
+python kmerFilter.py -f target_probes.bed -m 18 -j 18 -j genome_18.jf -k 4
+```
+
+### 5) (Optional) Reverse-complement probes (probeRC)
 
 ```bash
 python probeRC_py3.py -f target_probes.bed
@@ -165,7 +169,3 @@ If you use OligoMiner concepts or reproduce the workflow, **please cite the orig
 ## Disclaimer
 
 This is an **unofficial** port. It is provided **as-is**, without warranty. Validate results for your specific genome, alignment settings, and hybridization conditions. (The upstream project also explicitly provides the software without warranty under MIT.)
-
----
-
-必要なら、あなたのリポジトリに実在するファイル名（`blockParse_py3.py` など）に合わせて、README内のコマンドと出力名（`*_probes.bed` のstem規則）を「完全に整合」する形にこちらで詰めて整形します。
