@@ -15,7 +15,7 @@ Unofficial status:
   original authors or institutions.
 
 Third-party tools and libraries:
-- The workflow commonly uses external tools such as Bowtie2 and Jellyfish, and
+- The workflow commonly uses external tools such as Bowtie2 and Jellyfish (k-mer counter; Bioconda package: kmer-jellyfish), and
   Python libraries such as NumPy, SciPy, scikit-learn, and Biopython.
 - These third-party components are NOT included in this repository and are
   installed separately by the user. They are licensed under their respective
