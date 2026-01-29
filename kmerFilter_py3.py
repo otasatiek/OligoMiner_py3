@@ -1,10 +1,3 @@
-# This file is a modified version of "kmerFilter.py" originally part of OligoMiner.
-# Original Copyright (c) 2017 Molecular Systems Lab, Wyss Institute, Harvard University
-# Modified for Python 3 compatibility by Keita Sato
-#
-# This software is distributed under the MIT License.
-# See the original license notice below for details.
-
 #!/usr/bin/env python
 # --------------------------------------------------------------------------
 # OligoMiner
@@ -33,6 +26,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # --------------------------------------------------------------------------
+#
+# This file is a modified version of "kmerFilter.py" originally part of
+# OligoMiner. Modified for Python 3 and modern Biopython compatibility by
+# Keita Sato.
 
 # Specific script name.
 scriptName = 'kmerFilter'

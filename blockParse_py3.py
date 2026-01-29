@@ -2,9 +2,9 @@
 # --------------------------------------------------------------------------
 # OligoMiner
 # blockParse.py
-# 
+#
 # (c) 2017 Molecular Systems Lab
-# 
+#
 # Wyss Institute for Biologically-Inspired Engineering
 # Harvard University
 #
@@ -26,6 +26,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # --------------------------------------------------------------------------
+#
+# This file is a modified version of "blockParse.py" originally part of
+# OligoMiner. Modified for Python 3 and modern Biopython compatibility by
+# Keita Sato.
 
 # Specific script name.
 scriptName = 'blockParse'
