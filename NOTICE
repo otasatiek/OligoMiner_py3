@@ -1,0 +1,29 @@
+NOTICE
+
+This repository contains AI-assisted, Python 3–compatible ports and/or modifications
+of selected scripts from the OligoMiner project.
+
+Upstream attribution:
+- OligoMiner scripts were originally developed by the Molecular Systems Lab
+  (Wyss Institute for Biologically-Inspired Engineering, Harvard University) and
+  are distributed under the MIT License.
+- This repository redistributes modified versions under the same MIT License.
+  See LICENSE for the full text.
+
+Unofficial status:
+- This is an unofficial port and is not affiliated with or endorsed by the
+  original authors or institutions.
+
+Third-party tools and libraries:
+- The workflow commonly uses external tools such as Bowtie2 and Jellyfish, and
+  Python libraries such as NumPy, SciPy, scikit-learn, and Biopython.
+- These third-party components are NOT included in this repository and are
+  installed separately by the user. They are licensed under their respective
+  licenses (e.g., Bowtie2: GPLv3; Jellyfish: GPL-family; scikit-learn: BSD-3;
+  Biopython: Biopython License/BSD-style).
+
+Publication:
+- The original OligoMiner method is described in: doi:10.1073/pnas.1714530115
+
+No warranty:
+- This software is provided "AS IS" without warranty of any kind. See LICENSE.
