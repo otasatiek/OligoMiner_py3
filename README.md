@@ -162,8 +162,17 @@ If you use OligoMiner concepts or reproduce the workflow, **please cite the orig
 
 ## License
 
-* The original OligoMiner scripts are distributed under the **MIT License**.
-* This repository:  **MIT License**
+This repository is released under the **MIT License** (see `LICENSE`).
+
+Portions of this repository are **modified versions** (Python 3–compatible ports and related changes) of scripts originally distributed as part of **OligoMiner**, developed by the **Molecular Systems Lab** (Wyss Institute for Biologically-Inspired Engineering, Harvard University). The upstream MIT license text and copyright notices are preserved in the headers of the modified source files where applicable.
+
+Modified files include a statement such as:
+> “This file is a modified version of ‘<original>.py’ originally part of OligoMiner. Modified for Python 3 and modern Biopython compatibility by Keita Sato.”
+
+**Third-party dependencies:** Some workflows may require external tools and Python packages (e.g., Bowtie2, Jellyfish, NumPy, SciPy, scikit-learn, Biopython). These third-party components are **not distributed** with this repository and are governed by their respective licenses.
+
+For additional attribution and notes, see `NOTICE`.
+
 ---
 
 ## Disclaimer
