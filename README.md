@@ -150,6 +150,76 @@ The base `outputClean_py3.py` prints only “unique”, “zero”, or “LDA mo
 
 ---
 
+## Batch probe-design helper script
+
+`make_30to37ntprobes_with_bowtie2_kmerfilter_and_verification.py` is a convenience wrapper script for batch-generation of short oligonucleotide probes from multiple target sequence files.
+
+This script automates the following workflow:
+
+1. Generate 30–37 nt candidate probes using `blockParse_py3.py`
+2. Align candidate probes to a reference genome using Bowtie2
+3. Filter alignments using `outputClean_py3_ver2.py` in Unique+Zero mode (`-uz`)
+4. Apply k-mer abundance filtering using `kmerFilter_py3.py`
+5. Select up to 20 probes per target, prioritizing probes with lengths close to the median probe length
+6. Verify that the final probe sequences correspond to reverse-complement sequences present in the original target sequence
+
+### Usage
+
+```bash
+python make_30to37ntprobes_with_bowtie2_kmerfilter_and_verification.py \
+  /path/to/input_folder \
+  /path/to/bowtie2_index_prefix \
+  /path/to/genome_18mer.jf
+```
+
+Optional arguments:
+
+```bash
+-m, --mer_length       k-mer length used for kmerFilter.py3.py
+-k, --kmer_threshold  k-mer occurrence threshold used for kmerFilter.py3.py
+```
+
+Example:
+
+```bash
+python make_30to37ntprobes_with_bowtie2_kmerfilter_and_verification.py \
+  ./targets \
+  /data/genomes/gallus_gallus/bowtie2/GRCg7b \
+  /data/genomes/gallus_gallus/jellyfish/GRCg7b_18mer.jf \
+  -m 18 \
+  -k 5
+```
+
+### Input
+
+The input folder should contain target sequence files with the `.txt` extension. Each file should contain one target sequence, optionally with a FASTA-style header line beginning with `>`.
+
+### Output
+
+For each target file, the script creates the following subdirectories inside the input folder:
+
+```text
+fastq/
+sam/
+bed/
+kfiltered_bed/
+upto20/
+```
+
+The final selected probe set is written to:
+
+```text
+upto20/<target_name>_RCupto20.bed
+```
+
+### Notes
+
+This script assumes that `blockParse_py3.py`, `outputClean_py3_ver2.py`, and `kmerFilter_py3.py` are available in the current working directory or otherwise callable from the execution environment. Bowtie2 and Jellyfish reference files must be prepared in advance.
+
+The script is intended as a practical batch-processing helper for small to moderate numbers of target genes. Users should validate the resulting probe sets for their own genome assembly, target sequence source, repeat-masking strategy, and hybridization conditions.
+
+---
+
 ## Citation
 
 If you use OligoMiner concepts or reproduce the workflow, **please cite the original paper**:
